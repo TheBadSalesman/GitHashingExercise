@@ -8,6 +8,8 @@ if [ "$#" -ne 1 ]; then
 	exit 1
 fi
 
+echo $1 > 4digit.txt
+
 hashed=$(echo -n $1 | sha256sum | awk '{print $1}')
 
 echo $hashed | tee hash_output.txt
